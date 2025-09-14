@@ -27,7 +27,15 @@ double sumArray(const double* a, int n) {
     return sum;
 }
 
-int main(){
-    double sum = 0.0;                  // not initialized
-    cout << "Starts as: " << sum << '\n';  // you'll see it's not 0
+int main() {
+    int size = 5;                 
+    double* arr = new double[size];     
+
+    enterArrayData(arr, size);
+    outputArrayData(arr, size);
+    double total = sumArray(arr, size);
+    cout << "Sum of values: " << total << '\n';
+
+    delete[] arr;
+    return 0;
 }
