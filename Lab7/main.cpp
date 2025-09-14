@@ -12,7 +12,7 @@ string* reverseArray(string* a, int n){
     string* startarray = a;
     string* endarray = a + (n - 1);
 
-    while (left < right){
+    while (startarray < endarray){
         string temp = *startarray;
         *startarray = *endarray;
         *endarray = temp;
@@ -20,7 +20,6 @@ string* reverseArray(string* a, int n){
         startarray++;
         endarray--;
     }
-    
     return a;
 }
 
@@ -36,9 +35,13 @@ int main() {
 
     cout << "Original array: ";
     displayArray(names, Num);
+    cout << "\n";
 
     names = reverseArray(names, Num);
+
+    cout << "Reversed array: ";
     displayArray(names, Num);
+
 
     delete[] names;
     return 0;
