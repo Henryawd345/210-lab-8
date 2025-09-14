@@ -23,3 +23,23 @@ string* reverseArray(string* a, int n){
     
     return a;
 }
+
+int main() {
+    int Num = 5;
+    string* names = new string[Num];
+
+    *(names + 0) = "Henry";
+    *(names + 1) = "Gun";
+    *(names + 2) = "Cake";
+    *(names + 3) = "Jack";
+    *(names + 4) = "Fah";
+
+    cout << "Original array: ";
+    displayArray(names, Num);
+
+    names = reverseArray(names, Num);
+    displayArray(names, Num);
+
+    delete[] names;
+    return 0;
+}
